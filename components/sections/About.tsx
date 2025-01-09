@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { CheckCircle, Award, Zap } from 'lucide-react';
 
 export default function About() {
   return (
@@ -37,34 +38,43 @@ export default function About() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-semibold">My Journey</h3>
+            <h3 className="text-2xl font-semibold">Innovative Full-Stack Developer</h3>
             <p className="text-gray-300 leading-relaxed">
-              I'm a versatile full-stack developer with a passion for crafting efficient, scalable solutions. 
-              My journey in tech is driven by a deep curiosity and a commitment to continuous learning.
+              With over 5 years of experience in crafting robust, scalable solutions, I bring a unique blend of technical expertise and creative problem-solving to every project. My passion lies in building efficient, user-centric applications that drive business growth and enhance user experiences.
             </p>
-            <p className="text-gray-300 leading-relaxed">
-              With expertise spanning frontend, backend, DevOps, and app development, I bring a holistic 
-              approach to every project. My problem-solving skills allow me to tackle complex challenges 
-              and deliver innovative solutions.
-            </p>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#6E56CF]" />
-                <span>Full-stack development with a focus on modern technologies</span>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-6 h-6 text-[#00FFA3] flex-shrink-0 mt-1" />
+                <div>
+                  <span className="font-semibold">Full-Stack Mastery:</span> Proficient in both frontend and backend technologies, ensuring seamless integration and optimal performance across the entire application stack.
+                </div>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#6E56CF]" />
-                <span>DevOps practices for streamlined deployment and operations</span>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-6 h-6 text-[#00FFA3] flex-shrink-0 mt-1" />
+                <div>
+                  <span className="font-semibold">DevOps Enthusiast:</span> Experienced in implementing CI/CD pipelines, containerization, and cloud services, resulting in streamlined development processes and reduced time-to-market.
+                </div>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#6E56CF]" />
-                <span>Mobile app development for cross-platform solutions</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#6E56CF]" />
-                <span>Strong problem-solving skills for optimizing performance</span>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-6 h-6 text-[#00FFA3] flex-shrink-0 mt-1" />
+                <div>
+                  <span className="font-semibold">Mobile App Expertise:</span> Skilled in developing cross-platform mobile applications, delivering native-like experiences with optimal performance.
+                </div>
               </li>
             </ul>
+            <div className="pt-4">
+              <h4 className="text-xl font-semibold mb-4">Key Achievements</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-2">
+                  <Award className="w-6 h-6 text-[#6E56CF] flex-shrink-0 mt-1" />
+                  <div>Led the development of a high-traffic e-commerce platform, resulting in a 40% increase in conversion rates.</div>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Zap className="w-6 h-6 text-[#6E56CF] flex-shrink-0 mt-1" />
+                  <div>Optimized database queries and implemented caching strategies, improving application response times by 60%.</div>
+                </li>
+              </ul>
+            </div>
           </motion.div>
         </div>
       </div>
