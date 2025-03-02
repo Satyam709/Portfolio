@@ -21,8 +21,8 @@ const experiences = [
     description: 'Built robust backend systems and APIs for data-intensive applications, optimizing for speed and scalability.'
   },
   {
-    date: '2016 - 2018',
-    title: 'Junior Web Developer',
+    date: 'March 2021',
+    title: 'First Programming Language',
     company: 'StartUp Innovations',
     description: 'Began my journey in web development, working on various frontend projects and learning modern frameworks.'
   }

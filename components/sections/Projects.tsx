@@ -1,33 +1,7 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const projects = [
-  {
-    title: 'E-commerce Platform',
-    description: 'A modern e-commerce solution with microservices architecture',
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'AWS'],
-    github: '#',
-    demo: '#'
-  },
-  {
-    title: 'DevOps Dashboard',
-    description: 'Centralized monitoring and deployment management tool',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-    tags: ['Vue.js', 'Go', 'Kubernetes', 'Prometheus', 'Grafana'],
-    github: '#',
-    demo: '#'
-  },
-  {
-    title: 'Cross-platform Mobile App',
-    description: 'Fitness tracking app with real-time data synchronization',
-    image: 'https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=800&q=80',
-    tags: ['React Native', 'Firebase', 'Redux', 'Node.js'],
-    github: '#',
-    demo: '#'
-  }
-];
+import { projects } from '@/data/myInfo';
 
 export default function Projects() {
   return (
