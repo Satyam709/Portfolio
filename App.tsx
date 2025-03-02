@@ -66,6 +66,7 @@ const Navigation = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center gap-2"
+          onClick={()=>scrollTo("about")}
         >
           <Code2 className="w-8 h-8 text-[#6E56CF]" />
           <span className="font-bold text-xl">Satyam</span>
@@ -95,7 +96,7 @@ const Navigation = () => {
 
           <a
             className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 group"
-            onClick={() => scrollTo("technologies")}
+            onClick={() => scrollTo("tech-stack")}
           >
             <Cpu className="w-5 h-5 group-hover:text-[#6E56CF] transition-colors duration-300" />
             <span className="hover:underline underline-offset-2">
@@ -105,7 +106,7 @@ const Navigation = () => {
 
           <a
             className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 group"
-            onClick={() => scrollTo("timeline")}
+            onClick={() => scrollTo("experience")}
           >
             <Clock className="w-5 h-5 group-hover:text-[#6E56CF] transition-colors duration-300" />
             <span className="hover:underline underline-offset-2">Timeline</span>
@@ -158,8 +159,8 @@ const Navigation = () => {
               <a
                 className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 py-2"
                 onClick={() => {
-                  scrollTo("projects");                  
                   setIsMenuOpen(false);
+                  setTimeout(() => scrollTo("projects"), 100);
                 }}
               >
                 <Briefcase className="w-5 h-5" />
@@ -169,8 +170,8 @@ const Navigation = () => {
               <a
                 className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 py-2"
                 onClick={() => {
-                  scrollTo("skills");
                   setIsMenuOpen(false);
+                  setTimeout(()=> scrollTo("skills"), 100);
                 }}
               >
                 <Code className="w-5 h-5" />
@@ -180,8 +181,8 @@ const Navigation = () => {
               <a
                 className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 py-2"
                 onClick={() => {
-                  scrollTo("technologies");
                   setIsMenuOpen(false);
+                  setTimeout(() => scrollTo("tech-stack"), 100);
                 }}
               >
                 <Cpu className="w-5 h-5" />
@@ -191,8 +192,8 @@ const Navigation = () => {
               <a
                 className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 py-2"
                 onClick={() => {
-                  scrollTo("timeline");
                   setIsMenuOpen(false);
+                  setTimeout(() => scrollTo("experience"), 100);
                 }}
               >
                 <Clock className="w-5 h-5" />
