@@ -3,6 +3,7 @@ import { Mail, MessageSquare, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { email, twitterUrl } from '@/data/myInfo';
 
 export default function Contact() {
   return (
@@ -32,18 +33,18 @@ export default function Contact() {
 
             <div className="space-y-4">
               <a 
-                href="mailto:your@email.com" 
+                href={`mailto:${email}`} 
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
               >
                 <Mail className="w-5 h-5 text-[#6E56CF]" />
-                your@email.com
+                officialsatyam9665@gmail.com
               </a>
               <a 
-                href="#" 
+                href={twitterUrl}
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
               >
                 <MessageSquare className="w-5 h-5 text-[#6E56CF]" />
-                @username
+                @officialsatyam
               </a>
             </div>
           </motion.div>

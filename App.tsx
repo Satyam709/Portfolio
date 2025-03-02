@@ -10,6 +10,7 @@ import TechStack from '@/components/sections/TechStack';
 import Projects from '@/components/sections/Projects';
 import Experience from '@/components/sections/Experience';
 import Contact from '@/components/sections/Contact';
+import { email, githubUrl, linkedinUrl } from './data/myInfo';
 
 function SmoothScroll({ children }: { children: React.ReactNode }) {
   const { scrollYProgress } = useScroll();
@@ -50,7 +51,7 @@ export default function App() {
 
 function Navigation() {
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100 }}
@@ -70,9 +71,15 @@ function Navigation() {
           animate={{ opacity: 1, x: 0 }}
           className="flex gap-4"
         >
-          <SocialLink href="https://github.com" icon={<Github />} />
-          <SocialLink href="https://linkedin.com" icon={<Linkedin />} />
-          <SocialLink href="mailto:your@email.com" icon={<Mail />} />
+          <SocialLink href={githubUrl} icon={<Github />} />
+          <SocialLink
+            href={linkedinUrl}
+            icon={<Linkedin />}
+          />
+          <SocialLink
+            href={`mailto:${email}`}
+            icon={<Mail />}
+          />
         </motion.div>
       </div>
     </motion.nav>
