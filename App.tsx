@@ -1,6 +1,6 @@
-import { useRef } from 'react';
-import { useScroll, useSpring, motion } from 'framer-motion';
-import { Code2, Github, Linkedin, Mail } from 'lucide-react';
+import { useState } from 'react';
+import { useScroll, useSpring, motion, AnimatePresence } from 'framer-motion';
+import { Clock, Code2, Github, Linkedin, Mail ,Briefcase,Code,Cpu, FileDown, X, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import ParticleBackground from '@/components/ParticleBackground';
@@ -49,7 +49,11 @@ export default function App() {
   );
 }
 
-function Navigation() {
+const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -66,27 +70,156 @@ function Navigation() {
           <Code2 className="w-8 h-8 text-[#6E56CF]" />
           <span className="font-bold text-xl">Satyam</span>
         </motion.div>
+
+        {/* Desktop Navigation */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="hidden md:flex items-center gap-6"
+        >
+          <a
+            className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 group"
+            onClick={() => scrollTo("projects")}
+          >
+            <Briefcase className="w-5 h-5 group-hover:text-[#6E56CF] transition-colors duration-300" />
+            <span className="hover:underline underline-offset-2">Projects</span>
+          </a>
+
+          <a
+            className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 group"
+            onClick={() => scrollTo("skills")}
+          >
+            <Code className="w-5 h-5 group-hover:text-[#6E56CF] transition-colors duration-300" />
+            <span className="hover:underline underline-offset-2">Skills</span>
+          </a>
+
+          <a
+            className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 group"
+            onClick={() => scrollTo("technologies")}
+          >
+            <Cpu className="w-5 h-5 group-hover:text-[#6E56CF] transition-colors duration-300" />
+            <span className="hover:underline underline-offset-2">
+              Technologies
+            </span>
+          </a>
+
+          <a
+            className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 group"
+            onClick={() => scrollTo("timeline")}
+          >
+            <Clock className="w-5 h-5 group-hover:text-[#6E56CF] transition-colors duration-300" />
+            <span className="hover:underline underline-offset-2">Timeline</span>
+          </a>
+        </motion.div>
+
+        {/* Desktop Social Links */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex gap-4"
+          className="hidden md:flex gap-4"
         >
+          <a
+            href="/resume.pdf"
+            download
+            className="flex items-center gap-2 bg-[#6E56CF] hover:bg-[#5D47B2] text-white px-3 py-1.5 rounded-md transition-colors duration-300"
+          >
+            <FileDown className="w-4 h-4" />
+            <span>Resume</span>
+          </a>
           <SocialLink href={githubUrl} icon={<Github />} />
-          <SocialLink
-            href={linkedinUrl}
-            icon={<Linkedin />}
-          />
-          <SocialLink
-            href={`mailto:${email}`}
-            icon={<Mail />}
-          />
+          <SocialLink href={linkedinUrl} icon={<Linkedin />} />
+          <SocialLink href={`mailto:${email}`} icon={<Mail />} />
         </motion.div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-white p-2"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-black/30 backdrop-blur-md border-b border-white/10 overflow-hidden"
+          >
+            <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+              <a
+                className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 py-2"
+                onClick={() => {
+                  scrollTo("projects");                  
+                  setIsMenuOpen(false);
+                }}
+              >
+                <Briefcase className="w-5 h-5" />
+                <span>Projects</span>
+              </a>
+
+              <a
+                className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 py-2"
+                onClick={() => {
+                  scrollTo("skills");
+                  setIsMenuOpen(false);
+                }}
+              >
+                <Code className="w-5 h-5" />
+                <span>Skills</span>
+              </a>
+
+              <a
+                className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 py-2"
+                onClick={() => {
+                  scrollTo("technologies");
+                  setIsMenuOpen(false);
+                }}
+              >
+                <Cpu className="w-5 h-5" />
+                <span>Technologies</span>
+              </a>
+
+              <a
+                className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 py-2"
+                onClick={() => {
+                  scrollTo("timeline");
+                  setIsMenuOpen(false);
+                }}
+              >
+                <Clock className="w-5 h-5" />
+                <span>Timeline</span>
+              </a>
+
+              <div className="flex items-center gap-4 pt-2 border-t border-white/10">
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="flex items-center gap-2 bg-[#6E56CF] hover:bg-[#5D47B2] text-white px-3 py-1.5 rounded-md transition-colors duration-300"
+                >
+                  <FileDown className="w-4 h-4" />
+                  <span>Resume</span>
+                </a>
+                <SocialLink href={githubUrl} icon={<Github />} />
+                <SocialLink href={linkedinUrl} icon={<Linkedin />} />
+                <SocialLink href={`mailto:${email}`} icon={<Mail />} />
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
-}
+};
 
-function Hero() {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -94,8 +227,9 @@ function Hero() {
     }
   };
 
+function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4">
+    <section onClick={()=>scrollTo("about") }  className="relative min-h-screen flex items-center justify-center px-4">
       <div className="max-w-4xl mx-auto text-center z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -164,6 +298,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex gap-4 justify-center"
+          onClick={(e)=>e.stopPropagation()}
         >
           <Button
             size="lg"
@@ -233,6 +368,7 @@ function Hero() {
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
           className="w-6 h-10 border-2 border-white rounded-full flex justify-center"
+          onClick={() => scrollTo('about')}
         >
           <motion.div className="w-1 h-2 bg-white rounded-full mt-2" />
         </motion.div>
