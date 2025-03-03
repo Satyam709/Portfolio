@@ -3,30 +3,49 @@ import { Calendar, Briefcase } from 'lucide-react';
 
 const experiences = [
   {
-    date: '2021 - Present',
-    title: 'Senior Full Stack Developer',
-    company: 'Tech Solutions Inc.',
-    description: 'Leading enterprise-level applications development with a focus on scalable architecture and DevOps practices.'
+    date: "2024 - Present",
+    title: "DevOps & Cloud Enthusiast",
+    company: "Independent Projects",
+    description:
+      "Exploring cloud-native technologies, CI/CD pipelines, and container orchestration to streamline deployments and improve system reliability.",
   },
   {
-    date: '2019 - 2021',
-    title: 'Mobile App Developer',
-    company: 'Mobile Innovations',
-    description: 'Developed cross-platform mobile applications for iOS and Android, focusing on performance and user experience.'
+    date: "Early 2024",
+    title: "Smart India Hackathon Finalist",
+    company: "National-Level Competition",
+    description:
+      "Developed an innovative solution as a college finalist in the Smart India Hackathon, solving real-world problems through technology and teamwork.",
   },
   {
-    date: '2018 - 2019',
-    title: 'Backend Developer',
-    company: 'Data Driven Solutions',
-    description: 'Built robust backend systems and APIs for data-intensive applications, optimizing for speed and scalability.'
+    date: "Mid 2023 - Present",
+    title: "Full Stack Developer",
+    company: "Personal & Open Source Projects",
+    description:
+      "Building scalable web applications with a strong focus on backend development, database optimization, and API design using modern frameworks.",
   },
   {
-    date: 'March 2021',
-    title: 'First Programming Language',
-    company: 'StartUp Innovations',
-    description: 'Began my journey in web development, working on various frontend projects and learning modern frameworks.'
-  }
+    date: "Late 2023",
+    title: "Advanced Algorithms & Data Structures",
+    company: "Self-Learning (Princeton University - Robert Sedgewick)",
+    description:
+      "Completed both 'Algorithms, Part I & II' courses, mastering key concepts like graph algorithms, sorting, searching, and string processing.",
+  },
+  {
+    date: "Early 2023 - Mid 2023",
+    title: "Web Development Foundations",
+    company: "Self-Learning & Projects",
+    description:
+      "Gained expertise in frontend and backend technologies, focusing on modern frameworks, responsive design, and RESTful APIs.",
+  },
+  {
+    date: "2020 - 2022",
+    title: "Java Programmer",
+    company: "Self-Learning & Academic Projects",
+    description:
+      "Developed a strong foundation in object-oriented programming, data structures, and algorithms through academic coursework and personal projects.",
+  },
 ];
+
 
 export default function Experience() {
   return (

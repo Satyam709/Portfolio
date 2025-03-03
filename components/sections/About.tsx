@@ -21,13 +21,13 @@ export default function About() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-square rounded-2xl overflow-hidden">
+            {/* <div className="aspect-square rounded-2xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80"
+                src=""
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
-            </div>
+            </div> */}
             <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-[#6E56CF]/20 rounded-full blur-2xl -z-10" />
             <div className="absolute -top-6 -left-6 w-48 h-48 bg-[#00FFA3]/20 rounded-full blur-2xl -z-10" />
           </motion.div>
