@@ -10,7 +10,7 @@ import TechStack from '@/components/sections/TechStack';
 import Projects from '@/components/sections/Projects';
 import Experience from '@/components/sections/Experience';
 import Contact from '@/components/sections/Contact';
-import { email, githubUrl, linkedinUrl } from './data/myInfo';
+import { email, githubUrl, linkedinUrl, resumeUrl } from './data/myInfo';
 
 function SmoothScroll({ children }: { children: React.ReactNode }) {
   const { scrollYProgress } = useScroll();
@@ -66,7 +66,7 @@ const Navigation = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center gap-2"
-          onClick={()=>scrollTo("about")}
+          onClick={() => scrollTo("about")}
         >
           <Code2 className="w-8 h-8 text-[#6E56CF]" />
           <span className="font-bold text-xl">Satyam</span>
@@ -120,7 +120,9 @@ const Navigation = () => {
           className="hidden md:flex gap-4"
         >
           <a
-            href="/resume.pdf"
+            href={resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             download
             className="flex items-center gap-2 bg-[#6E56CF] hover:bg-[#5D47B2] text-white px-3 py-1.5 rounded-md transition-colors duration-300"
           >
@@ -171,7 +173,7 @@ const Navigation = () => {
                 className="flex items-center gap-2 hover:text-[#6E56CF] hover:cursor-pointer transition-colors duration-300 py-2"
                 onClick={() => {
                   setIsMenuOpen(false);
-                  setTimeout(()=> scrollTo("skills"), 100);
+                  setTimeout(() => scrollTo("skills"), 100);
                 }}
               >
                 <Code className="w-5 h-5" />
