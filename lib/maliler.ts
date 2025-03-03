@@ -21,13 +21,13 @@ export async function sendMail(name:string, mail: string, message: string) {
 
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
-        console.log(error);
+        console.log("Something went wrong : ",error);
         return false;
       } else {
         console.log(`Email sent: ${info.response}`);
+        return true;
       }
     });
-    return true;
   } catch (error) {
     console.log(error);
     return false;
