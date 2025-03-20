@@ -49,7 +49,7 @@ export default function Contact() {
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
               >
                 <MessageSquare className="w-5 h-5 text-[#6E56CF]" />
-                @officialsatyam
+                @satyam9665
               </a>
             </div>
           </motion.div>
@@ -124,16 +124,15 @@ export default function Contact() {
                 const message = formData.get("message") as string;
                 const res = await sendMail(name, email, message);
                 if (res) {
+                  console.log("res", res);
                   setStatus("Message Sent!");
-                  setTimeout(() => {
-                    setStatus(null);
-                  }, 2000);
                 } else {
+                  console.log("res", res);
                   setStatus("Message Failed to Send!");
-                  setTimeout(() => {
-                    setStatus(null);
-                  }, 2000);
                 }
+                setTimeout(() => {
+                  setStatus(null);
+                }, 5000);
               }}
             >
               <div>
