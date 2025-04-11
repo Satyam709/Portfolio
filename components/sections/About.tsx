@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Award, Zap } from "lucide-react";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -21,13 +22,15 @@ export default function About() {
             viewport={{ once: true }}
             className="relative"
           >
-            {/* <div className="aspect-square rounded-2xl overflow-hidden">
-              <img
-                src=""
+            <div className="aspect-square rounded-2xl overflow-hidden">
+              <Image
+                src="/satyam.png"
                 alt="Profile"
+                width={500}
+                height={500}
                 className="w-full h-full object-cover"
               />
-            </div> */}
+            </div>
             <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-[#6E56CF]/20 rounded-full blur-2xl -z-10" />
             <div className="absolute -top-6 -left-6 w-48 h-48 bg-[#00FFA3]/20 rounded-full blur-2xl -z-10" />
           </motion.div>
